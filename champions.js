@@ -7,7 +7,7 @@ const champions = [
   "Kayle", // February 21, 2009
   "Master Yi", // February 21, 2009
   "Morgana", // February 21, 2009
-  "Nunu & Willump", // February 21, 2009
+  "Nunu", // February 21, 2009
   "Ryze", // February 21, 2009
   "Sion", // February 21, 2009
   "Sivir", // February 21, 2009
@@ -38,7 +38,7 @@ const champions = [
   "Jarvan IV", // March 1, 2011
   "Elise", // October 26, 2012
   "Orianna", // June 1, 2011
-  "Monkey King", // July 26, 2011
+  "Wukong", // July 26, 2011
   "Nautilus", // February 14, 2012
   "Viktor", // December 29, 2011
   "Sejuani", // January 17, 2012
@@ -120,7 +120,7 @@ const champions = [
   "Akshan", // July 21, 2021 (Rerelease)
   "Vex",
   "Zeri",
-  "RenataGlasc",
+  "Renata",
   "BelVeth",
   "Nilah",
   "KSante",
