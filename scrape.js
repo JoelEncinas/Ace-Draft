@@ -2,14 +2,14 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
 
-const champions = ["champion1", "champion2", "champion3"]; // Array of champions
+const champions = require("./champions.js");
 const rank = "master_plus"; // Rank parameter
 
 const baseUrl = "https://u.gg/lol/champions/";
 const data = [];
 
 const scrapeData = async (champion) => {
-  const url = `${baseUrl}${champion}/build?rank=${rank}`;
+  const url = `${baseUrl}${champion.toLowerCase()}/build?rank=${rank}`;
 
   try {
     const response = await axios.get(url);
