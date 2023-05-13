@@ -150,14 +150,20 @@ function App() {
       if (selectedPosition) {
         const pick = picks.find((pick) => pick.id === selectedPosition);
         const otherPick = picks.find((pick) => pick.id === id);
+        if (
+          pick.selectedChampion === "1" &&
+          otherPick.selectedChampion === "1"
+        ) {
+          setSelectedPosition(id);
+        } else {
+          const { selectedChampion: temp } = pick;
+          pick.selectedChampion = otherPick.selectedChampion;
+          otherPick.selectedChampion = temp;
 
-        const { selectedChampion: temp } = pick;
-        pick.selectedChampion = otherPick.selectedChampion;
-        otherPick.selectedChampion = temp;
-
-        updateElement(selectedPosition, pick);
-        updateElement(id, otherPick);
-        setSelectedPosition(null);
+          updateElement(selectedPosition, pick);
+          updateElement(id, otherPick);
+          setSelectedPosition(null);
+        }
       } else {
         setSelectedPosition(id);
       }
@@ -193,7 +199,7 @@ function App() {
     setSelectedPosition(null);
     setPickedChampions([]);
     setPicks((prevPicks) =>
-    prevPicks.map((pick) => ({ ...pick, selectedChampion: "1" }))
+      prevPicks.map((pick) => ({ ...pick, selectedChampion: "1" }))
     );
   };
 
