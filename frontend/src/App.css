@@ -3,14 +3,25 @@
   overflow-y: auto;
 }
 
+.red,
+.blue,
+.red-text,
+.blue-text {
+  font-weight: 900;
+}
+
 .red {
-  font-weight: bold;
   background-color: #ff5c5c;
+}
+.red-text {
+  color: #ff5c5c;
 }
 
 .blue {
-  font-weight: bold;
   background-color: #3e7bfa;
+}
+.blue-text {
+  color: #3e7bfa;
 }
 
 .active {

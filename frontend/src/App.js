@@ -14,82 +14,102 @@ function App() {
     {
       id: 1,
       selectedChampion: "1",
+      draft: "BB1",
     },
     {
       id: 2,
       selectedChampion: "1",
+      draft: "BB2",
     },
     {
       id: 3,
       selectedChampion: "1",
+      draft: "BB3",
     },
     {
       id: 4,
       selectedChampion: "1",
+      draft: "BB4",
     },
     {
       id: 5,
       selectedChampion: "1",
+      draft: "BB5",
     },
     {
       id: 6,
       selectedChampion: "1",
+      draft: "RB1",
     },
     {
       id: 7,
       selectedChampion: "1",
+      draft: "RB2",
     },
     {
       id: 8,
       selectedChampion: "1",
+      draft: "RB3",
     },
     {
       id: 9,
       selectedChampion: "1",
+      draft: "RB4",
     },
     {
       id: 10,
       selectedChampion: "1",
+      draft: "RB5",
     },
     {
       id: 11,
       selectedChampion: "1",
+      draft: "B1",
     },
     {
       id: 12,
       selectedChampion: "1",
+      draft: "B2",
     },
     {
       id: 13,
       selectedChampion: "1",
+      draft: "B3",
     },
     {
       id: 14,
       selectedChampion: "1",
+      draft: "B4",
     },
     {
       id: 15,
       selectedChampion: "1",
+      draft: "B5",
     },
     {
       id: 16,
       selectedChampion: "1",
+      draft: "R1",
     },
     {
       id: 17,
       selectedChampion: "1",
+      draft: "R2",
     },
     {
       id: 18,
       selectedChampion: "1",
+      draft: "R3",
     },
     {
       id: 19,
       selectedChampion: "1",
+      draft: "R4",
     },
     {
       id: 20,
       selectedChampion: "1",
+      draft: "R5",
     },
   ]);
 
@@ -252,8 +272,10 @@ function App() {
         <div className="row">
           <div className="col-sm-2">
             <span style={{ height: 55, width: 75, display: "block" }} />
+
             {bluePicks.map((element) => (
-              <span key={element.id}>
+              <div className="d-flex align-items-center" key={element.id}>
+                <span className="blue-text mr-2">{element.draft}</span>
                 <img
                   className={`m-1 clickable ${
                     selectedPosition === element.id ? "active" : ""
@@ -263,7 +285,7 @@ function App() {
                   onClick={() => handleElementClick(element.id)}
                   style={{ height: 75 }}
                 />
-              </span>
+              </div>
             ))}
           </div>
           <div className="col-sm-8">
@@ -297,7 +319,7 @@ function App() {
           <div className="col-sm-2 text-right">
             <span style={{ height: 55, width: 75, display: "block" }} />
             {redPicks.map((element) => (
-              <span key={element.id}>
+              <div className="d-flex align-items-center" key={element.id}>
                 <img
                   className={`m-1 clickable ${
                     selectedPosition === element.id ? "active" : ""
@@ -307,7 +329,8 @@ function App() {
                   onClick={() => handleElementClick(element.id)}
                   style={{ height: 75 }}
                 />
-              </span>
+                <span className="red-text ml-2">{element.draft}</span>
+              </div>
             ))}
           </div>
           <Reset reset={reset} />
