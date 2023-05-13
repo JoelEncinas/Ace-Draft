@@ -6,49 +6,37 @@ import "./App.css";
 function App() {
   const [filter, setFilter] = useState("");
   const [selectedChampion, setSelectedChampion] = useState(null);
-  const [clickedPosition, setClickedPosition] = useState(null);
+  const [selectedPosition, setSelectedPosition] = useState(null);
 
   const [blueBans, setBlueBans] = useState([
     {
       id: 1,
-      selectedChampion: "none",
+      selectedChampion: "1",
     },
     {
       id: 2,
-      selectedChampion: "none",
+      selectedChampion: "1",
     },
     {
       id: 3,
-      selectedChampion: "none",
+      selectedChampion: "1",
     },
     {
       id: 4,
-      selectedChampion: "none",
+      selectedChampion: "1",
     },
     {
       id: 5,
-      selectedChampion: "none",
+      selectedChampion: "1",
     },
   ]);
 
-  const redPicks = {
-    rp1: 16,
-    rp2: 17,
-    rp3: 18,
-    rp4: 19,
-    rp5: 20,
-  };
-
   const handleChampionClick = (champion) => {
     console.log(champion);
-    setSelectedChampion(champion);
-  };
-
-  const handlePositionClick = (position) => {
-    if (selectedChampion) {
-      console.log(position);
+    if (selectedPosition) {
+      setSelectedChampion(null);
     } else {
-      setClickedPosition(position);
+      setSelectedChampion(champion);
     }
   };
 
@@ -63,28 +51,59 @@ function App() {
       .includes(filter)
   );
 
+  const handleElementClick = (id) => {
+    // Handle element click logic based on id
+    console.log(id);
+    if (selectedChampion) {
+      const updatedPick = {
+        id: id,
+        selectedChampion: selectedChampion,
+      };
+
+      updateElement(id, updatedPick);
+    } else {
+    }
+  };
+
+  const updateElement = (id, updatedElement) => {
+    setBlueBans((prevElements) => {
+      const updatedElements = prevElements.map((element) => {
+        if (element.id === id) {
+          return { ...element, ...updatedElement };
+        }
+        return element;
+      });
+      return updatedElements;
+    });
+  };
+
   return (
     <div className="App">
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
             <div className="p-2 blue">Blue Side</div>
-            
+            {blueBans.map((element) => (
+              <div key={element.id}>
+                <img
+                  src={`./champion_images/${element.selectedChampion}.png`}
+                  alt={element.selectedChampion}
+                  onClick={() => handleElementClick(element.id)}
+                  style={{ height: 75 }}
+                />
+              </div>
+            ))}
           </div>
           <div className="col-sm-6">
             <div className="p-2 red text-right">Red Side</div>
             <div className="text-right">
-              <div>
-                
-              </div>
+              <div></div>
             </div>
           </div>
         </div>
         <div className="row">
           <div className="col-sm-2">
-            <div>
-
-            </div>
+            <div></div>
           </div>
           <div className="col-sm-8">
             <div className="p-2">
