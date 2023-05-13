@@ -34,17 +34,32 @@ function App() {
 
   const handleChampionClick = (champion) => {
     console.log(champion);
-    if (selectedPosition) {
-      const updatedPick = {
-        id: selectedPosition,
-        selectedChampion: champion,
-      };
+    if (!pickedChampions.includes(champion)) {
+      if (selectedPosition) {
+        const updatedPick = {
+          id: selectedPosition,
+          selectedChampion: champion,
+        };
 
-      updateElement(selectedPosition, updatedPick);
-      setSelectedPosition(null);
-      setPickedChampions(pickedChampions.concat(champion));
-    } else {
-      setSelectedChampion(champion);
+        updateElement(selectedPosition, updatedPick);
+        setSelectedPosition(null);
+
+        const element = blueBans.find((ban) => ban.id === selectedPosition);
+        if (element) {
+          if (element.selectedChampion === "1") {
+            setPickedChampions(pickedChampions.concat(champion));
+          } else {
+            setPickedChampions((prevChampions) => {
+              const updatedChampions = prevChampions.concat(champion);
+              return updatedChampions.filter(
+                (champion) => champion !== element.selectedChampion
+              );
+            });
+          }
+        }
+      } else {
+        setSelectedChampion(champion);
+      }
     }
   };
 
@@ -59,7 +74,20 @@ function App() {
 
       updateElement(id, updatedPick);
       setSelectedChampion(null);
-      setPickedChampions(pickedChampions.concat(selectedChampion));
+
+      const element = blueBans.find((ban) => ban.id === id);
+      if (element) {
+        if (element.selectedChampion === "1") {
+          setPickedChampions(pickedChampions.concat(selectedChampion));
+        } else {
+          setPickedChampions((prevChampions) => {
+            const updatedChampions = prevChampions.concat(selectedChampion);
+            return updatedChampions.filter(
+              (champion) => champion !== element.selectedChampion
+            );
+          });
+        }
+      }
     } else {
       setSelectedPosition(id);
     }
