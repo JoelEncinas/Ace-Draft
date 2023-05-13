@@ -5,32 +5,31 @@ import "./App.css";
 
 function App() {
   const [filter, setFilter] = useState("");
-  const [clickedChampion, setClickedChampion] = useState("");
-  const [clickedPosition, setClickedPosition] = useState("");
+  const [selectedChampion, setSelectedChampion] = useState(null);
+  const [clickedPosition, setClickedPosition] = useState(null);
 
-  const blueBans = {
-    bb1: 1,
-    bb2: 2,
-    bb3: 3,
-    bb4: 4,
-    bb5: 5,
-  };
-
-  const redBans = {
-    rb1: 6,
-    rb2: 7,
-    rb3: 8,
-    rb4: 9,
-    rb5: 10,
-  };
-
-  const bluePicks = {
-    bp1: 11,
-    bp2: 12,
-    bp3: 13,
-    bp4: 14,
-    bp5: 15,
-  };
+  const [blueBans, setBlueBans] = useState([
+    {
+      id: 1,
+      selectedChampion: "none",
+    },
+    {
+      id: 2,
+      selectedChampion: "none",
+    },
+    {
+      id: 3,
+      selectedChampion: "none",
+    },
+    {
+      id: 4,
+      selectedChampion: "none",
+    },
+    {
+      id: 5,
+      selectedChampion: "none",
+    },
+  ]);
 
   const redPicks = {
     rp1: 16,
@@ -42,11 +41,11 @@ function App() {
 
   const handleChampionClick = (champion) => {
     console.log(champion);
-    setClickedChampion(champion);
+    setSelectedChampion(champion);
   };
 
   const handlePositionClick = (position) => {
-    if (clickedChampion) {
+    if (selectedChampion) {
       console.log(position);
     } else {
       setClickedPosition(position);
@@ -70,31 +69,13 @@ function App() {
         <div className="row">
           <div className="col-sm-6">
             <div className="p-2 blue">Blue Side</div>
-            {Object.keys(blueBans).map((key) => (
-              <img
-                className="m-1"
-                key={key}
-                src={`./champion_images/1.png`}
-                alt="no champion selected"
-                style={{ width: 75 }}
-                onClick={() => handlePositionClick(key)}
-              />
-            ))}
+            
           </div>
           <div className="col-sm-6">
             <div className="p-2 red text-right">Red Side</div>
             <div className="text-right">
               <div>
-                {Object.keys(redBans).map((key) => (
-                  <img
-                    className="m-1"
-                    key={key}
-                    src={`./champion_images/1.png`}
-                    alt="no champion selected"
-                    style={{ width: 75 }}
-                    onClick={() => handlePositionClick(key)}
-                  />
-                ))}
+                
               </div>
             </div>
           </div>
@@ -102,17 +83,7 @@ function App() {
         <div className="row">
           <div className="col-sm-2">
             <div>
-              {" "}
-              {Object.keys(bluePicks).map((key) => (
-                <img
-                  className="m-1"
-                  key={key}
-                  src={`./champion_images/1.png`}
-                  alt="no champion selected"
-                  style={{ width: 75 }}
-                  onClick={() => handlePositionClick(key)}
-                />
-              ))}
+
             </div>
           </div>
           <div className="col-sm-8">
@@ -130,7 +101,7 @@ function App() {
                   {filteredChampions.map((champion) => (
                     <img
                       className={`m-1 ${
-                        clickedChampion === champion ? "active" : ""
+                        setSelectedChampion === champion ? "active" : ""
                       }`}
                       key={champion}
                       src={`./champion_images/${champion}.png`}
@@ -144,18 +115,7 @@ function App() {
             </div>
           </div>
           <div className="col-sm-2">
-            <div className="text-right">
-              {Object.keys(redPicks).map((key) => (
-                <img
-                  className="m-1"
-                  key={key}
-                  src={`./champion_images/1.png`}
-                  alt="no champion selected"
-                  style={{ width: 75 }}
-                  onClick={() => handlePositionClick(key)}
-                />
-              ))}
-            </div>
+            <div className="text-right"></div>
           </div>
         </div>
       </div>
