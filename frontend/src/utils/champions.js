@@ -1,11 +1,11 @@
-const championsUgg = [
+const championsDD = [
   "Alistar",
   "Annie",
   "Ashe",
   "Fiddlesticks",
   "Jax",
   "Kayle",
-  "Master Yi",
+  "MasterYi",
   "Morgana",
   "Nunu",
   "Ryze",
@@ -14,7 +14,7 @@ const championsUgg = [
   "Soraka",
   "Teemo",
   "Tristana",
-  "Twisted Fate",
+  "TwistedFate",
   "Warwick",
   "Veigar",
   "Evelynn",
@@ -24,7 +24,7 @@ const championsUgg = [
   "Rammus",
   "Anivia",
   "Shaco",
-  "Dr. Mundo",
+  "DrMundo",
   "Singed",
   "Heimerdinger",
   "Kassadin",
@@ -35,7 +35,7 @@ const championsUgg = [
   "Malphite",
   "Renekton",
   "Katarina",
-  "Jarvan IV",
+  "Jarvan",
   "Elise",
   "Orianna",
   "Wukong",
@@ -50,7 +50,6 @@ const championsUgg = [
   "Cassiopeia",
   "Skarner",
   "Ziggs",
-  "Nautilus",
   "Hecarim",
   "Lulu",
   "Draven",
@@ -75,7 +74,7 @@ const championsUgg = [
   "RekSai",
   "Ekko",
   "Bard",
-  "Tahm Kench",
+  "TahmKench",
   "Jhin",
   "Kindred",
   "Illaoi",
@@ -114,4 +113,4 @@ const championsUgg = [
   "Milio",
 ];
 
-module.exports = championsUgg;
+export default championsDD;

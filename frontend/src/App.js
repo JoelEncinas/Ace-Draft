@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import championsDD from "./utils/champions";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {championsDD.map((champion) => {
+        const championLowerCase = champion.toLowerCase();
+        return (
+          <img
+            key={champion}
+            src={`./champion_images/${champion}.png`}
+            alt={`${champion}`}
+            style={{width: 50}}
+          />
+        );
+      })}
     </div>
   );
 }
