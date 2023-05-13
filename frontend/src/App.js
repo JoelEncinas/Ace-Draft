@@ -7,6 +7,7 @@ function App() {
   const [filter, setFilter] = useState("");
   const [selectedChampion, setSelectedChampion] = useState(null);
   const [selectedPosition, setSelectedPosition] = useState(null);
+  const [pickedChampions, setPickedChampions] = useState([]);
 
   const [blueBans, setBlueBans] = useState([
     {
@@ -41,6 +42,7 @@ function App() {
 
       updateElement(selectedPosition, updatedPick);
       setSelectedPosition(null);
+      setPickedChampions(pickedChampions.concat(champion));
     } else {
       setSelectedChampion(champion);
     }
@@ -57,6 +59,7 @@ function App() {
 
       updateElement(id, updatedPick);
       setSelectedChampion(null);
+      setPickedChampions(pickedChampions.concat(selectedChampion));
     } else {
       setSelectedPosition(id);
     }
@@ -132,7 +135,7 @@ function App() {
                     <img
                       className={`m-1 clickable ${
                         selectedChampion === champion ? "active" : ""
-                      }`}
+                      } ${pickedChampions.includes(champion) ? "picked" : ""}`}
                       key={champion}
                       src={`./champion_images/${champion}.png`}
                       alt={champion}

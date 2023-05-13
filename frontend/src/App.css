@@ -1,29 +1,29 @@
 .draft {
-    height: 700px;
-    overflow-y: auto;
-}
-
-.selected {
-    -webkit-filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+  height: 700px;
+  overflow-y: auto;
 }
 
 .red {
-    font-weight: bold;
-    background-color: #FF5C5C;
+  font-weight: bold;
+  background-color: #ff5c5c;
 }
 
 .blue {
-    font-weight: bold;
-    background-color: #3E7BFA;
+  font-weight: bold;
+  background-color: #3e7bfa;
 }
 
 .active {
-    border: 3px solid #EF9A1E;
-    border-radius: 5px;
+  border: 3px solid #ef9a1e;
+  border-radius: 5px;
 }
 
 .clickable {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.picked {
+  cursor: default;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
