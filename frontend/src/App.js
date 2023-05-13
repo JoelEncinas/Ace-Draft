@@ -230,6 +230,20 @@ function App() {
 
   return (
     <div className="App">
+      <nav className="navbar navbar-dark bg-dark">
+        <a className="navbar-brand" href="#">
+          AceDraft
+        </a>
+
+        <div>
+          <ul className="navbar-nav me-auto">
+            <li className="nav-item">
+              <Reset reset={reset} />
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
@@ -244,7 +258,7 @@ function App() {
                     src={`./champion_images/${element.selectedChampion}.png`}
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
-                    style={{ height: 75 }}
+                    style={{ height: 65 }}
                   />
                 </span>
               ))}
@@ -262,7 +276,7 @@ function App() {
                     src={`./champion_images/${element.selectedChampion}.png`}
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
-                    style={{ height: 75 }}
+                    style={{ height: 65 }}
                   />
                 </span>
               ))}
@@ -283,15 +297,16 @@ function App() {
                   src={`./champion_images/${element.selectedChampion}.png`}
                   alt={element.selectedChampion}
                   onClick={() => handleElementClick(element.id)}
-                  style={{ height: 75 }}
+                  style={{ height: 65 }}
                 />
               </div>
             ))}
           </div>
           <div className="col-sm-8">
             <div className="p-2">
-              <div className="text-center mb-3">
+              <div className="input-group w-50 mx-auto text-center mb-2">
                 <input
+                  className="form-control"
                   type="text"
                   value={filter}
                   onChange={handleFilterChange}
@@ -308,7 +323,7 @@ function App() {
                       key={champion}
                       src={`./champion_images/${champion}.png`}
                       alt={champion}
-                      style={{ height: 75 }}
+                      style={{ height: 65 }}
                       onClick={() => handleChampionClick(champion)}
                     />
                   ))}
@@ -319,7 +334,10 @@ function App() {
           <div className="col-sm-2 text-right">
             <span style={{ height: 55, width: 75, display: "block" }} />
             {redPicks.map((element) => (
-              <div className="d-flex align-items-center" key={element.id}>
+              <div
+                className="d-flex align-items-center justify-content-end"
+                key={element.id}
+              >
                 <img
                   className={`m-1 clickable ${
                     selectedPosition === element.id ? "active" : ""
@@ -327,13 +345,12 @@ function App() {
                   src={`./champion_images/${element.selectedChampion}.png`}
                   alt={element.selectedChampion}
                   onClick={() => handleElementClick(element.id)}
-                  style={{ height: 75 }}
+                  style={{ height: 65 }}
                 />
                 <span className="red-text ml-2">{element.draft}</span>
               </div>
             ))}
           </div>
-          <Reset reset={reset} />
         </div>
       </div>
     </div>

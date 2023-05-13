@@ -1,5 +1,5 @@
 const Reset = ({ reset }) => {
-  return <button onClick={reset}>Reset Draft</button>;
+  return <button className="btn btn-primary" onClick={reset}>Reset Draft</button>;
 };
 
 export default Reset;
