@@ -231,16 +231,18 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
-          AceDraft
-        </a>
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            Ace Draft
+          </a>
 
-        <div>
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Reset reset={reset} />
-            </li>
-          </ul>
+          <div>
+            <ul className="navbar-nav me-auto">
+              <li className="nav-item">
+                <Reset reset={reset} />
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
 
