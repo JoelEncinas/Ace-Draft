@@ -11,17 +11,22 @@
 }
 
 .red {
+  text-align: right;
+  color: #fff;
   background-color: #ff5c5c;
 }
 .red-text {
   color: #ff5c5c;
+  margin-left: 10px;
 }
 
 .blue {
+  color: #fff;
   background-color: #3e7bfa;
 }
 .blue-text {
   color: #3e7bfa;
+  margin-right: 10px;
 }
 
 .active {

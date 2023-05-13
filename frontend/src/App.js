@@ -230,7 +230,7 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="navbar navbar-dark bg-dark">
+      <nav className="navbar navbar-dark bg-dark mb-2">
         <div className="container">
           <a className="navbar-brand" href="#">
             Ace Draft
@@ -291,7 +291,7 @@ function App() {
 
             {bluePicks.map((element) => (
               <div className="d-flex align-items-center" key={element.id}>
-                <span className="blue-text mr-2">{element.draft}</span>
+                <span className="blue-text">{element.draft}</span>
                 <img
                   className={`m-1 clickable ${
                     selectedPosition === element.id ? "active" : ""
