@@ -33,7 +33,6 @@ function App() {
   ]);
 
   const handleChampionClick = (champion) => {
-    console.log(champion);
     if (!pickedChampions.includes(champion)) {
       if (selectedPosition) {
         const updatedPick = {
@@ -64,8 +63,6 @@ function App() {
   };
 
   const handleElementClick = (id) => {
-    console.log(id);
-
     if (selectedChampion) {
       const updatedPick = {
         id: id,
@@ -89,7 +86,20 @@ function App() {
         }
       }
     } else {
-      setSelectedPosition(id);
+      if (selectedPosition) {
+        const pick = blueBans.find((pick) => pick.id === selectedPosition);
+        const otherPick = blueBans.find((pick) => pick.id === id);
+
+        const { selectedChampion: temp } = pick;
+        pick.selectedChampion = otherPick.selectedChampion;
+        otherPick.selectedChampion = temp;
+
+        updateElement(selectedPosition, pick);
+        updateElement(id, otherPick);
+        setSelectedPosition(null);
+      } else {
+        setSelectedPosition(id);
+      }
     }
   };
 
