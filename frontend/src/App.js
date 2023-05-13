@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import champions from "./utils/champions";
+import Reset from "./components/Reset";
 
 import "./App.css";
 
@@ -126,6 +127,16 @@ function App() {
       .includes(filter)
   );
 
+  const reset = () => {
+    setFilter("");
+    setSelectedChampion(null);
+    setSelectedPosition(null);
+    setPickedChampions([]);
+    setBlueBans((prevBlueBans) =>
+      prevBlueBans.map((blueBan) => ({ ...blueBan, selectedChampion: "1" }))
+    );
+  };
+
   return (
     <div className="App">
       <div className="container">
@@ -188,6 +199,7 @@ function App() {
           <div className="col-sm-2">
             <div className="text-right"></div>
           </div>
+          <Reset reset={reset} />
         </div>
       </div>
     </div>
