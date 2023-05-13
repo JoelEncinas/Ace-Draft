@@ -10,7 +10,7 @@ function App() {
   const [selectedPosition, setSelectedPosition] = useState(null);
   const [pickedChampions, setPickedChampions] = useState([]);
 
-  const [blueBans, setBlueBans] = useState([
+  const [picks, setPicks] = useState([
     {
       id: 1,
       selectedChampion: "1",
@@ -51,6 +51,46 @@ function App() {
       id: 10,
       selectedChampion: "1",
     },
+    {
+      id: 11,
+      selectedChampion: "1",
+    },
+    {
+      id: 12,
+      selectedChampion: "1",
+    },
+    {
+      id: 13,
+      selectedChampion: "1",
+    },
+    {
+      id: 14,
+      selectedChampion: "1",
+    },
+    {
+      id: 15,
+      selectedChampion: "1",
+    },
+    {
+      id: 16,
+      selectedChampion: "1",
+    },
+    {
+      id: 17,
+      selectedChampion: "1",
+    },
+    {
+      id: 18,
+      selectedChampion: "1",
+    },
+    {
+      id: 19,
+      selectedChampion: "1",
+    },
+    {
+      id: 20,
+      selectedChampion: "1",
+    },
   ]);
 
   const handleChampionClick = (champion) => {
@@ -64,7 +104,7 @@ function App() {
         updateElement(selectedPosition, updatedPick);
         setSelectedPosition(null);
 
-        const element = blueBans.find((ban) => ban.id === selectedPosition);
+        const element = picks.find((ban) => ban.id === selectedPosition);
         if (element) {
           if (element.selectedChampion === "1") {
             setPickedChampions(pickedChampions.concat(champion));
@@ -93,7 +133,7 @@ function App() {
       updateElement(id, updatedPick);
       setSelectedChampion(null);
 
-      const element = blueBans.find((ban) => ban.id === id);
+      const element = picks.find((ban) => ban.id === id);
       if (element) {
         if (element.selectedChampion === "1") {
           setPickedChampions(pickedChampions.concat(selectedChampion));
@@ -108,8 +148,8 @@ function App() {
       }
     } else {
       if (selectedPosition) {
-        const pick = blueBans.find((pick) => pick.id === selectedPosition);
-        const otherPick = blueBans.find((pick) => pick.id === id);
+        const pick = picks.find((pick) => pick.id === selectedPosition);
+        const otherPick = picks.find((pick) => pick.id === id);
 
         const { selectedChampion: temp } = pick;
         pick.selectedChampion = otherPick.selectedChampion;
@@ -125,7 +165,7 @@ function App() {
   };
 
   const updateElement = (id, updatedElement) => {
-    setBlueBans((prevElements) => {
+    setPicks((prevElements) => {
       const updatedElements = prevElements.map((element) => {
         if (element.id === id) {
           return { ...element, ...updatedElement };
@@ -152,13 +192,15 @@ function App() {
     setSelectedChampion(null);
     setSelectedPosition(null);
     setPickedChampions([]);
-    setBlueBans((prevBlueBans) =>
-      prevBlueBans.map((blueBan) => ({ ...blueBan, selectedChampion: "1" }))
+    setPicks((prevPicks) =>
+    prevPicks.map((pick) => ({ ...pick, selectedChampion: "1" }))
     );
   };
 
-  const firstFive = blueBans.slice(0, 5);
-  const remainingFive = blueBans.slice(5, 10);
+  const blueBans = picks.slice(0, 5);
+  const redBans = picks.slice(5, 10);
+  const bluePicks = picks.slice(10, 15);
+  const redPicks = picks.slice(15, 20);
 
   return (
     <div className="App">
@@ -167,7 +209,7 @@ function App() {
           <div className="col-sm-6">
             <div className="p-2 blue">Blue Side</div>
             <div className="d-flex justify-content-start">
-              {firstFive.map((element) => (
+              {blueBans.map((element) => (
                 <span key={element.id}>
                   <img
                     className={`m-1 clickable ${
@@ -185,7 +227,7 @@ function App() {
           <div className="col-sm-6">
             <div className="p-2 red text-right">Red Side</div>
             <div className="d-flex justify-content-end">
-              {remainingFive.map((element) => (
+              {redBans.map((element) => (
                 <span key={element.id}>
                   <img
                     className={`m-1 clickable ${
@@ -203,7 +245,19 @@ function App() {
         </div>
         <div className="row">
           <div className="col-sm-2">
-            <div></div>
+            {bluePicks.map((element) => (
+              <span key={element.id}>
+                <img
+                  className={`m-1 clickable ${
+                    selectedPosition === element.id ? "active" : ""
+                  }`}
+                  src={`./champion_images/${element.selectedChampion}.png`}
+                  alt={element.selectedChampion}
+                  onClick={() => handleElementClick(element.id)}
+                  style={{ height: 75 }}
+                />
+              </span>
+            ))}
           </div>
           <div className="col-sm-8">
             <div className="p-2">
@@ -233,8 +287,20 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-sm-2">
-            <div className="text-right"></div>
+          <div className="col-sm-2 text-right">
+            {redPicks.map((element) => (
+              <span key={element.id}>
+                <img
+                  className={`m-1 clickable ${
+                    selectedPosition === element.id ? "active" : ""
+                  }`}
+                  src={`./champion_images/${element.selectedChampion}.png`}
+                  alt={element.selectedChampion}
+                  onClick={() => handleElementClick(element.id)}
+                  style={{ height: 75 }}
+                />
+              </span>
+            ))}
           </div>
           <Reset reset={reset} />
         </div>
