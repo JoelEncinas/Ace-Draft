@@ -34,26 +34,21 @@ function App() {
   const handleChampionClick = (champion) => {
     console.log(champion);
     if (selectedPosition) {
-      setSelectedChampion(null);
+      const updatedPick = {
+        id: selectedPosition,
+        selectedChampion: champion,
+      };
+
+      updateElement(selectedPosition, updatedPick);
+      setSelectedPosition(null);
     } else {
       setSelectedChampion(champion);
     }
   };
 
-  const handleFilterChange = (event) => {
-    setFilter(event.target.value.toLowerCase());
-  };
-
-  const filteredChampions = champions.filter((champion) =>
-    champion
-      .toLowerCase()
-      .replace(/[.'\s]/g, "")
-      .includes(filter)
-  );
-
   const handleElementClick = (id) => {
-    // Handle element click logic based on id
     console.log(id);
+
     if (selectedChampion) {
       const updatedPick = {
         id: id,
@@ -61,7 +56,9 @@ function App() {
       };
 
       updateElement(id, updatedPick);
+      setSelectedChampion(null);
     } else {
+      setSelectedPosition(id);
     }
   };
 
@@ -77,6 +74,17 @@ function App() {
     });
   };
 
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value.toLowerCase());
+  };
+
+  const filteredChampions = champions.filter((champion) =>
+    champion
+      .toLowerCase()
+      .replace(/[.'\s]/g, "")
+      .includes(filter)
+  );
+
   return (
     <div className="App">
       <div className="container">
@@ -86,6 +94,9 @@ function App() {
             {blueBans.map((element) => (
               <div key={element.id}>
                 <img
+                  className={`m-1 clickable ${
+                    selectedPosition === element.id ? "active" : ""
+                  }`}
                   src={`./champion_images/${element.selectedChampion}.png`}
                   alt={element.selectedChampion}
                   onClick={() => handleElementClick(element.id)}
@@ -119,8 +130,8 @@ function App() {
                 <div>
                   {filteredChampions.map((champion) => (
                     <img
-                      className={`m-1 ${
-                        setSelectedChampion === champion ? "active" : ""
+                      className={`m-1 clickable ${
+                        selectedChampion === champion ? "active" : ""
                       }`}
                       key={champion}
                       src={`./champion_images/${champion}.png`}

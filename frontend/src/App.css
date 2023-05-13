@@ -23,3 +23,7 @@
     border: 3px solid #EF9A1E;
     border-radius: 5px;
 }
+
+.clickable {
+    cursor: pointer;
+}
