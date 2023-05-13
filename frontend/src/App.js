@@ -31,6 +31,26 @@ function App() {
       id: 5,
       selectedChampion: "1",
     },
+    {
+      id: 6,
+      selectedChampion: "1",
+    },
+    {
+      id: 7,
+      selectedChampion: "1",
+    },
+    {
+      id: 8,
+      selectedChampion: "1",
+    },
+    {
+      id: 9,
+      selectedChampion: "1",
+    },
+    {
+      id: 10,
+      selectedChampion: "1",
+    },
   ]);
 
   const handleChampionClick = (champion) => {
@@ -137,30 +157,47 @@ function App() {
     );
   };
 
+  const firstFive = blueBans.slice(0, 5);
+  const remainingFive = blueBans.slice(5, 10);
+
   return (
     <div className="App">
       <div className="container">
         <div className="row">
           <div className="col-sm-6">
             <div className="p-2 blue">Blue Side</div>
-            {blueBans.map((element) => (
-              <div key={element.id}>
-                <img
-                  className={`m-1 clickable ${
-                    selectedPosition === element.id ? "active" : ""
-                  }`}
-                  src={`./champion_images/${element.selectedChampion}.png`}
-                  alt={element.selectedChampion}
-                  onClick={() => handleElementClick(element.id)}
-                  style={{ height: 75 }}
-                />
-              </div>
-            ))}
+            <div className="d-flex justify-content-start">
+              {firstFive.map((element) => (
+                <span key={element.id}>
+                  <img
+                    className={`m-1 clickable ${
+                      selectedPosition === element.id ? "active" : ""
+                    }`}
+                    src={`./champion_images/${element.selectedChampion}.png`}
+                    alt={element.selectedChampion}
+                    onClick={() => handleElementClick(element.id)}
+                    style={{ height: 75 }}
+                  />
+                </span>
+              ))}
+            </div>
           </div>
           <div className="col-sm-6">
             <div className="p-2 red text-right">Red Side</div>
-            <div className="text-right">
-              <div></div>
+            <div className="d-flex justify-content-end">
+              {remainingFive.map((element) => (
+                <span key={element.id}>
+                  <img
+                    className={`m-1 clickable ${
+                      selectedPosition === element.id ? "active" : ""
+                    }`}
+                    src={`./champion_images/${element.selectedChampion}.png`}
+                    alt={element.selectedChampion}
+                    onClick={() => handleElementClick(element.id)}
+                    style={{ height: 75 }}
+                  />
+                </span>
+              ))}
             </div>
           </div>
         </div>
