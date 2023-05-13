@@ -251,6 +251,7 @@ function App() {
         </div>
         <div className="row">
           <div className="col-sm-2">
+            <span style={{ height: 55, width: 75, display: "block" }} />
             {bluePicks.map((element) => (
               <span key={element.id}>
                 <img
@@ -294,6 +295,7 @@ function App() {
             </div>
           </div>
           <div className="col-sm-2 text-right">
+            <span style={{ height: 55, width: 75, display: "block" }} />
             {redPicks.map((element) => (
               <span key={element.id}>
                 <img
