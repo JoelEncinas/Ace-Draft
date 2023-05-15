@@ -25,7 +25,7 @@ const Tierlist = () => {
                   <img
                     src={`./champion_images/${champion.champion}.png`}
                     alt={champion.champion}
-                    style={{ height: 65 }}
+                    style={{ height: 30 }}
                   />
                 </td>
                 <td className="align-middle">{champion.champion}</td>
