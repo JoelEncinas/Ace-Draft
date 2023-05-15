@@ -3,6 +3,7 @@ import champions from "./utils/champions";
 import Reset from "./components/Reset";
 
 import "./App.css";
+import "./image.css";
 
 function App() {
   const [filter, setFilter] = useState("");
@@ -252,7 +253,7 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark mb-2">
-        <div className="container">
+        <div className="container main-container">
           <a className="navbar-brand" href="#">
             Ace Draft
           </a>
@@ -267,9 +268,9 @@ function App() {
         </div>
       </nav>
 
-      <div className="container">
+      <div className="container main-container">
         <div className="row">
-          <div className="col-sm-6">
+          <div className="col-12 col-sm-6">
             <div className="p-2 blue">Blue Side</div>
             <div className="d-flex justify-content-start">
               {blueBans.map((element) => (
@@ -282,13 +283,12 @@ function App() {
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
                     onContextMenu={(e) => handleRightClick(element.id, e)}
-                    style={{ height: 65 }}
                   />
                 </span>
               ))}
             </div>
           </div>
-          <div className="col-sm-6">
+          <div className="col-12 col-sm-6">
             <div className="p-2 red text-right">Red Side</div>
             <div className="d-flex justify-content-end">
               {redBans.map((element) => (
@@ -301,7 +301,6 @@ function App() {
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
                     onContextMenu={(e) => handleRightClick(element.id, e)}
-                    style={{ height: 65 }}
                   />
                 </span>
               ))}
@@ -309,7 +308,7 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-2">
+          <div className="col-6 col-sm-6 col-md-2 order-1 order-sm-1 order-md-1">
             <span style={{ height: 55, width: 75, display: "block" }} />
 
             {bluePicks.map((element) => (
@@ -328,7 +327,7 @@ function App() {
               </div>
             ))}
           </div>
-          <div className="col-sm-8">
+          <div className="col-12 col-sm-12 col-md-8 order-3 order-sm-3 order-md-2">
             <div className="p-2">
               <div className="input-group w-50 mx-auto text-center mb-2">
                 <input
@@ -358,7 +357,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="col-sm-2 text-right">
+          <div className="col-6 col-sm-6 col-md-2 order-2 order-sm-2 order-md-3 text-right">
             <span style={{ height: 55, width: 75, display: "block" }} />
             {redPicks.map((element) => (
               <div

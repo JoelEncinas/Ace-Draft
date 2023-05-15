@@ -1,3 +1,15 @@
+@media (max-width: 768px) {
+  .main-container {
+    max-width: 758px;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-container {
+    max-width: 566px;
+  }
+}
+
 .draft {
   height: 450px;
   overflow-y: auto;
@@ -37,19 +49,42 @@
 }
 
 @keyframes colorChange {
-  0% { border-color: #7d6800; }
-  25% { border-color: #ffd500; }
-  50% { border-color: #7d6800; }
-  75% { border-color: #ffd500; }
-  100% { border-color: #7d6800; }
+  0% {
+    border-color: #7d6800;
+  }
+  25% {
+    border-color: #ffd500;
+  }
+  50% {
+    border-color: #7d6800;
+  }
+  75% {
+    border-color: #ffd500;
+  }
+  100% {
+    border-color: #7d6800;
+  }
 }
 
 .clickable {
   cursor: pointer;
+  height: 65px;
 }
 
 .picked {
   cursor: default;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+}
+
+@media (max-width: 992px) {
+  .clickable {
+    height: 55px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clickable {
+    height: 40px;
+  }
 }
