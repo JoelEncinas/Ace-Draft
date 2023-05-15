@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import champions from "./utils/champions";
 import Reset from "./components/Reset";
 
-import "./App.css";
-
 function App() {
   const [filter, setFilter] = useState("");
   const [selectedChampion, setSelectedChampion] = useState(null);
