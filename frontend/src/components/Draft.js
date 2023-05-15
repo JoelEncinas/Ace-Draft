@@ -247,6 +247,9 @@ function Draft() {
   const bluePicks = picks.slice(10, 15);
   const redPicks = picks.slice(15, 20);
 
+  const titleText =
+    "Left click champion then position or viceversa to select champion.\nRight click to remove champion from position.\nBin icon for resetting the draft.";
+
   return (
     <div className="App">
       <div className="container main-container app-container">
@@ -289,6 +292,13 @@ function Draft() {
             </div>
           </div>
         </div>
+
+        <div className="text-center">
+          <p className="how-to-use" title={titleText}>
+            How to use?
+          </p>
+        </div>
+
         <div className="row">
           <div className="col-6 col-sm-6 col-md-2 order-1 order-sm-1 order-md-1">
             <span style={{ height: 55, width: 75, display: "block" }} />

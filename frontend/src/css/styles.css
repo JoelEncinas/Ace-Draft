@@ -110,3 +110,34 @@
   justify-content: center;
   align-items: center;
 }
+
+
+.how-to-use {
+  cursor: help;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.how-to-use::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  /* Adjust this value to control the distance between text and dots */
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent 50%, #839496 50%);
+  background-position: -1px 0;
+  /* Adjust this value to control the size of the dots */
+  background-repeat: repeat-x;
+  background-size: 4px 1px;
+  /* Adjust this value to control the size of the dots */
+}
+
+@media (max-width: 768px) {
+  .how-to-use {
+    display: none;
+  }
+}
