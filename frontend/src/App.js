@@ -124,7 +124,7 @@ function App() {
         updateElement(selectedPosition, updatedPick);
         setSelectedPosition(null);
 
-        const element = picks.find((ban) => ban.id === selectedPosition);
+        const element = picks.find((pick) => pick.id === selectedPosition);
         if (element) {
           if (element.selectedChampion === "1") {
             setPickedChampions(pickedChampions.concat(champion));
@@ -153,7 +153,7 @@ function App() {
       updateElement(id, updatedPick);
       setSelectedChampion(null);
 
-      const element = picks.find((ban) => ban.id === id);
+      const element = picks.find((pick) => pick.id === id);
       if (element) {
         if (element.selectedChampion === "1") {
           setPickedChampions(pickedChampions.concat(selectedChampion));
@@ -190,6 +190,23 @@ function App() {
     }
   };
 
+  const handleRightClick = (id, e) => {
+    e.preventDefault();
+
+    const pick = picks.find((pick) => pick.id === id);
+    const currentChampion = pick.selectedChampion;
+
+    pick.selectedChampion = "1";
+    updateElement(id, pick);
+
+    setPickedChampions((prevChampions) => {
+      return prevChampions.filter((champion) => champion !== currentChampion);
+    });
+
+    setSelectedPosition(null);
+    setSelectedChampion(null);
+  };
+
   const updateElement = (id, updatedElement) => {
     setPicks((prevElements) => {
       const updatedElements = prevElements.map((element) => {
@@ -202,8 +219,12 @@ function App() {
     });
   };
 
-  const handleFilterChange = (event) => {
-    setFilter(event.target.value.toLowerCase());
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value.toLowerCase());
+  };
+
+  const preventEvent = (e) => {
+    e.preventDefault();
   };
 
   const filteredChampions = champions.filter((champion) =>
@@ -260,6 +281,7 @@ function App() {
                     src={`./champion_images/${element.selectedChampion}.png`}
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
+                    onContextMenu={(e) => handleRightClick(element.id, e)}
                     style={{ height: 65 }}
                   />
                 </span>
@@ -278,6 +300,7 @@ function App() {
                     src={`./champion_images/${element.selectedChampion}.png`}
                     alt={element.selectedChampion}
                     onClick={() => handleElementClick(element.id)}
+                    onContextMenu={(e) => handleRightClick(element.id, e)}
                     style={{ height: 65 }}
                   />
                 </span>
@@ -299,6 +322,7 @@ function App() {
                   src={`./champion_images/${element.selectedChampion}.png`}
                   alt={element.selectedChampion}
                   onClick={() => handleElementClick(element.id)}
+                  onContextMenu={(e) => handleRightClick(element.id, e)}
                   style={{ height: 65 }}
                 />
               </div>
@@ -325,8 +349,9 @@ function App() {
                       key={champion}
                       src={`./champion_images/${champion}.png`}
                       alt={champion}
-                      style={{ height: 65 }}
                       onClick={() => handleChampionClick(champion)}
+                      onContextMenu={(e) => preventEvent(e)}
+                      style={{ height: 65 }}
                     />
                   ))}
                 </div>
@@ -347,6 +372,7 @@ function App() {
                   src={`./champion_images/${element.selectedChampion}.png`}
                   alt={element.selectedChampion}
                   onClick={() => handleElementClick(element.id)}
+                  onContextMenu={(e) => handleRightClick(element.id, e)}
                   style={{ height: 65 }}
                 />
                 <span className="red-text ml-2">{element.draft}</span>
