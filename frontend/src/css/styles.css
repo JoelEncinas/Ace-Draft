@@ -27,6 +27,7 @@
   color: #fff;
   background-color: #ff5c5c;
 }
+
 .red-text {
   color: #ff5c5c;
   margin-left: 10px;
@@ -36,6 +37,7 @@
   color: #fff;
   background-color: #3e7bfa;
 }
+
 .blue-text {
   color: #3e7bfa;
   margin-right: 10px;
@@ -52,15 +54,19 @@
   0% {
     border-color: #7d6800;
   }
+
   25% {
     border-color: #ffd500;
   }
+
   50% {
     border-color: #7d6800;
   }
+
   75% {
     border-color: #ffd500;
   }
+
   100% {
     border-color: #7d6800;
   }
