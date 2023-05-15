@@ -30,9 +30,18 @@
 }
 
 .active {
-  border: 3px solid #ef9a1e;
+  border: 3px solid #fff;
   border-radius: 5px;
   filter: sepia();
+  animation: colorChange 5s infinite;
+}
+
+@keyframes colorChange {
+  0% { border-color: #7d6800; }
+  25% { border-color: #ffd500; }
+  50% { border-color: #7d6800; }
+  75% { border-color: #ffd500; }
+  100% { border-color: #7d6800; }
 }
 
 .clickable {
