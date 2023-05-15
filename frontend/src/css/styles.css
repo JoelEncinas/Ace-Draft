@@ -141,3 +141,7 @@
     display: none;
   }
 }
+
+.winrate-container {
+  max-width: 500px;
+}

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-dark bg-dark px-3 mb-2">
+    <nav id="top" className="navbar navbar-dark bg-dark px-3 mb-2">
       <div className="container">
         <Link to="/" className="navbar-brand text-center">
           Ace Draft

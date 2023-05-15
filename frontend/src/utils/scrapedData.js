@@ -40,7 +40,7 @@ const championsWinrate = [
     "winRate": "49.95%"
   },
   {
-    "champion": "AurelionSol",
+    "champion": "Aurelion Sol",
     "winRate": "49.55%"
   },
   {
@@ -52,7 +52,7 @@ const championsWinrate = [
     "winRate": "51.18%"
   },
   {
-    "champion": "BelVeth",
+    "champion": "Bel'Veth",
     "winRate": "51.87%"
   },
   {
@@ -96,7 +96,7 @@ const championsWinrate = [
     "winRate": "46.85%"
   },
   {
-    "champion": "DrMundo",
+    "champion": "Dr.Mundo",
     "winRate": "50.29%"
   },
   {
@@ -184,7 +184,7 @@ const championsWinrate = [
     "winRate": "51.44%"
   },
   {
-    "champion": "JarvanIV",
+    "champion": "Jarvan IV",
     "winRate": "50.75%"
   },
   {
@@ -204,11 +204,11 @@ const championsWinrate = [
     "winRate": "49.87%"
   },
   {
-    "champion": "KSante",
+    "champion": "K'Sante",
     "winRate": "48.76%"
   },
   {
-    "champion": "KaiSa",
+    "champion": "Kai'Sa",
     "winRate": "49.74%"
   },
   {
@@ -244,7 +244,7 @@ const championsWinrate = [
     "winRate": "51.21%"
   },
   {
-    "champion": "KhaZix",
+    "champion": "Kha'Zix",
     "winRate": "51.84%"
   },
   {
@@ -256,7 +256,7 @@ const championsWinrate = [
     "winRate": "52.22%"
   },
   {
-    "champion": "KogMaw",
+    "champion": "Kog'Maw",
     "winRate": "52.38%"
   },
   {
@@ -264,7 +264,7 @@ const championsWinrate = [
     "winRate": "48.02%"
   },
   {
-    "champion": "LeeSin",
+    "champion": "Lee Sin",
     "winRate": "48.37%"
   },
   {
@@ -304,7 +304,7 @@ const championsWinrate = [
     "winRate": "52.23%"
   },
   {
-    "champion": "MasterYi",
+    "champion": "Master Yi",
     "winRate": "49.36%"
   },
   {
@@ -312,7 +312,7 @@ const championsWinrate = [
     "winRate": "50.78%"
   },
   {
-    "champion": "MissFortune",
+    "champion": "Miss Fortune",
     "winRate": "47.6%"
   },
   {
@@ -352,7 +352,7 @@ const championsWinrate = [
     "winRate": "47.39%"
   },
   {
-    "champion": "Nunu",
+    "champion": "Nunu & Willump",
     "winRate": "50.99%"
   },
   {
@@ -396,7 +396,7 @@ const championsWinrate = [
     "winRate": "49.79%"
   },
   {
-    "champion": "RekSai",
+    "champion": "Rek'Sai",
     "winRate": "54.73%"
   },
   {
@@ -404,7 +404,7 @@ const championsWinrate = [
     "winRate": "52.06%"
   },
   {
-    "champion": "Renata",
+    "champion": "Renata Glasc",
     "winRate": "48.8%"
   },
   {
@@ -496,7 +496,7 @@ const championsWinrate = [
     "winRate": "49.69%"
   },
   {
-    "champion": "TahmKench",
+    "champion": "Tahm Kench",
     "winRate": "50%"
   },
   {
@@ -532,7 +532,7 @@ const championsWinrate = [
     "winRate": "49.94%"
   },
   {
-    "champion": "TwistedFate",
+    "champion": "Twisted Fate",
     "winRate": "49.07%"
   },
   {
@@ -560,7 +560,7 @@ const championsWinrate = [
     "winRate": "45.7%"
   },
   {
-    "champion": "VelKoz",
+    "champion": "Vel'Koz",
     "winRate": "51.47%"
   },
   {
@@ -604,7 +604,7 @@ const championsWinrate = [
     "winRate": "49.47%"
   },
   {
-    "champion": "XinZhao",
+    "champion": "Xin Zhao",
     "winRate": "50.23%"
   },
   {

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <>
-      <footer className="mt-5 text-center">
+      <footer className="mt-5 mb-3 text-center">
         <span>
           Made by{" "}
           <a
