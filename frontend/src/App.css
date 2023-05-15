@@ -88,3 +88,19 @@
     height: 40px;
   }
 }
+
+.app-container {
+  position: relative;
+}
+
+.btn-reset {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

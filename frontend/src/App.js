@@ -3,7 +3,6 @@ import champions from "./utils/champions";
 import Reset from "./components/Reset";
 
 import "./App.css";
-import "./image.css";
 
 function App() {
   const [filter, setFilter] = useState("");
@@ -260,15 +259,14 @@ function App() {
 
           <div>
             <ul className="navbar-nav me-auto">
-              <li className="nav-item">
-                <Reset reset={reset} />
-              </li>
+              <li className="nav-item">hello</li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div className="container main-container">
+      <div className="container main-container app-container">
+        <Reset reset={reset} />
         <div className="row">
           <div className="col-12 col-sm-6">
             <div className="p-2 blue">Blue Side</div>
