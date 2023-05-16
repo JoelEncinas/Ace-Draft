@@ -9,14 +9,19 @@ const NavBar = () => {
         </Link>
 
         <ul className="navbar-nav d-flex flex-row">
-          <li className="nav-item px-3">
+          <li className="nav-item px-2">
             <Link className="nav-link" to="/">
-              Draft 
+              Draft
             </Link>
           </li>
-          <li className="nav-item">
+          <li className="nav-item px-2">
             <Link className="nav-link" to="/tierlist">
               Tierlist
+            </Link>
+          </li>
+          <li className="nav-item px-2">
+            <Link className="nav-link" to="/about">
+              About
             </Link>
           </li>
         </ul>

@@ -146,6 +146,7 @@
   }
 }
 
-.winrate-container {
+.winrate-container,
+.about-container {
   max-width: 500px;
 }
