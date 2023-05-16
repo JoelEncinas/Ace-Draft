@@ -1,5 +1,5 @@
 # 💯 Ace Draft
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap" style="max-width: 100%;">
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="node" style="max-width: 100%;"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="bootstrap" style="max-width: 100%;">
 
 This project is a League of Legends (LoL) drafting tool designed to aid players in making strategic decisions during the champion selection phase. The tool utilizes the Cheerio library and Node.js for scraping data from external sources and provides a user-friendly interface for banning, picking, and filtering champions. Additionally, it displays the winrate for each champion in a convenient table format.
 
