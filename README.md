@@ -7,9 +7,8 @@ This project is a League of Legends (LoL) drafting tool designed to aid players 
 
 - Champion Bans: Users can select champions to ban during the drafting phase, allowing them to strategically limit the available options for their opponents.
 - Champion Picks: Users can choose champions they intend to pick, helping them plan their team composition and counter the enemy team's strategy.
-- Champion Filtering: The tool provides filters to refine the available champion pool based on specific criteria such as role, winrate, popularity, and more. This allows users to narrow down their choices based on their team's needs and the current meta.
-- Data Scraping: The tool utilizes Cheerio and Node.js to scrape champion data from external sources, ensuring that the winrate information displayed is up-to-date and accurate.
-- Winrate Display: The drafted champions' winrates are presented in an easily readable table format, providing users with valuable insights into each champion's performance in recent matches.
+- Data Scraping: The tool utilizes Cheerio and Node.js to scrape champion data from external sources.
+- Winrate Display: The champions' winrates are presented in an easily readable table format, providing users with valuable insights into each champion's performance in recent matches.
 - User-Friendly Interface: The tool offers an intuitive and visually appealing interface, making it accessible to LoL players of all experience levels.
 
 ## 🌐 Check it out for yourself!
